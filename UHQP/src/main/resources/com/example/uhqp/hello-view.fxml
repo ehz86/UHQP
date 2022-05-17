@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -31,12 +32,14 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ProgressBar layoutX="230.0" layoutY="550.0" prefWidth="200.0" progress="0.0" />
+      <ProgressBar layoutX="375.0" layoutY="550.0" prefWidth="200.0" progress="0.0" />
       <Slider layoutX="618.0" layoutY="552.0" />
       <Button layoutX="44.0" layoutY="53.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://e7.pngegg.com/pngimages/1/776/png-clipart-computer-icons-house-home-house-angle-building.png); -fx-background-size: 54px;" />
-      <Button layoutX="203.0" layoutY="487.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://cdn-icons-png.flaticon.com/512/106/106117.png); -fx-background-size: 54px;" />
-      <Button layoutX="303.0" layoutY="487.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(http://cdn.onlinewebfonts.com/svg/img_529968.png); -fx-background-size: 54px;" />
-      <Button layoutX="410.0" layoutY="487.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://w7.pngwing.com/pngs/742/525/png-transparent-computer-icons-logo-fast-forward-symbol-symbol-miscellaneous-angle-rectangle-thumbnail.png); -fx-background-size: 50px;" />
+      <Button layoutX="348.0" layoutY="487.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://cdn-icons-png.flaticon.com/512/106/106117.png); -fx-background-size: 54px;" />
+      <Button layoutX="450.0" layoutY="486.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(http://cdn.onlinewebfonts.com/svg/img_529968.png); -fx-background-size: 50;" />
+      <Button layoutX="537.0" layoutY="486.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(https://w7.pngwing.com/pngs/742/525/png-transparent-computer-icons-logo-fast-forward-symbol-symbol-miscellaneous-angle-rectangle-thumbnail.png); -fx-background-size: 50px;" />
       <Button layoutX="44.0" layoutY="131.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://w7.pngwing.com/pngs/1013/789/png-transparent-computer-icons-playlist-icon-music-angle-text-rectangle.png); -fx-background-size: 54px;" />
+      <MediaView fitHeight="200.0" fitWidth="200.0" layoutX="375.0" layoutY="200.0" />
+      <ListView layoutX="14.0" layoutY="200.0" prefHeight="200.0" prefWidth="200.0" />
    </children>
 </AnchorPane>
