@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Slider?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
@@ -17,32 +21,112 @@
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
          <center>
-            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
                   <MediaView fitHeight="200.0" fitWidth="200.0" StackPane.alignment="CENTER" />
                </children>
             </StackPane>
          </center>
          <bottom>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="728.0" style="-fx-background-color: #D0E1F9;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://cdn-icons-png.flaticon.com/512/106/106117.png); -fx-background-size: 54px;" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(http://cdn.onlinewebfonts.com/svg/img_529968.png); -fx-background-size: 50;" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" style="-fx-background-image: url(https://w7.pngwing.com/pngs/742/525/png-transparent-computer-icons-logo-fast-forward-symbol-symbol-miscellaneous-angle-rectangle-thumbnail.png); -fx-background-size: 50px;" />
-                  <ProgressBar prefWidth="200.0" progress="0.0" />
-                  <Slider />
+                  <Button fx:id="BackButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BackButtonPressed" prefHeight="40.0" prefWidth="40.0">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" top="25.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/skipleft.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="PlayButton" mnemonicParsing="false" onAction="#PlayButtonPressed" prefHeight="50.0" prefWidth="50.0">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" top="20.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/play.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="ForwardButton" mnemonicParsing="false" onAction="#ForwardButtonPressed" prefHeight="40.0" prefWidth="40.0">
+                     <HBox.margin>
+                        <Insets left="2.0" right="2.0" top="25.0" />
+                     </HBox.margin>
+                     <graphic>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/skipright.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <ProgressBar opacity="0.75" prefHeight="19.0" prefWidth="285.0" progress="0.35" style="-fx-border-color: #4D648D;">
+                     <HBox.margin>
+                        <Insets left="25.0" right="25.0" top="35.0" />
+                     </HBox.margin>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></ProgressBar>
+                  <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" rotate="180.0">
+                           <HBox.margin>
+                              <Insets right="4.0" top="28.0" />
+                           </HBox.margin>
+                           <image>
+                              <Image url="@images/volumeup.png" />
+                           </image>
+                        </ImageView>
+                        <Slider fx:id="Slider" prefHeight="14.0" prefWidth="111.0">
+                           <HBox.margin>
+                              <Insets top="35.0" />
+                           </HBox.margin>
+                        </Slider>
+                     </children>
+                  </HBox>
                </children>
             </HBox>
          </bottom>
          <left>
-            <VBox alignment="CENTER_LEFT" prefHeight="200.0" prefWidth="100.0" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="217.0" style="-fx-background-color: #283655;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="54.0" style="-fx-background-image: url(https://w7.pngwing.com/pngs/1013/789/png-transparent-computer-icons-playlist-icon-music-angle-text-rectangle.png); -fx-background-size: 54px;" />
+                  <Button fx:id="HomeButton" mnemonicParsing="false" onAction="#HomeButtonPress" prefHeight="48.0" prefWidth="222.0" text="HOME">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <graphic>
+
+                     </graphic>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/home.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+                  <Button fx:id="PlaylistButton" layoutX="65.0" layoutY="236.0" mnemonicParsing="false" onAction="#PressPlaylistButton" prefHeight="48.0" prefWidth="218.0" style="-fx-background-size: 54px;" text="PLAYLISTS">
+                     <VBox.margin>
+                        <Insets bottom="20.0" />
+                     </VBox.margin>
+                     <graphic>
+
+                     </graphic>
+                     <graphic>
+                        <ImageView fitHeight="50.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/audio.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
                </children>
             </VBox>
          </left>
       </BorderPane>
-      <MenuBar layoutX="-6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="132.0">
+      <MenuBar layoutX="-6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: 4D4096;">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
