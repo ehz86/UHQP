@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/UHQP/UHQP.iml" filepath="$PROJECT_DIR$/UHQP/UHQP.iml" />
-      <module fileurl="file://$PROJECT_DIR$/demoTextEditorBI2/demoTextEditorBI2.iml" filepath="$PROJECT_DIR$/demoTextEditorBI2/demoTextEditorBI2.iml" />
     </modules>
   </component>
 </project>

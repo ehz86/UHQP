@@ -1,12 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,9 +15,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane maxHeight="1280" maxWidth="2048" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
+<AnchorPane maxHeight="2160" maxWidth="3840" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
    <children>
-      <BorderPane prefHeight="1160.0" prefWidth="2048.0">
+      <BorderPane prefHeight="1160.0" prefWidth="1280.0">
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
@@ -63,13 +61,10 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <ProgressBar opacity="0.75" prefHeight="19.0" prefWidth="285.0" progress="0.35" style="-fx-border-color: #4D648D;">
+                  <Slider fx:id="progressBar" prefHeight="14.0" prefWidth="479.0">
                      <HBox.margin>
-                        <Insets left="25.0" right="25.0" top="35.0" />
-                     </HBox.margin>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></ProgressBar>
+                        <Insets top="35.0" />
+                     </HBox.margin></Slider>
                   <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
                         <ImageView fitHeight="30.0" fitWidth="30.0" nodeOrientation="RIGHT_TO_LEFT" pickOnBounds="true" preserveRatio="true" rotate="180.0">
