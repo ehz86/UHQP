@@ -17,13 +17,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1280" maxWidth="2048" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="800.0">
+      <BorderPane prefHeight="1160.0" prefWidth="2048.0">
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
-                  <MediaView fitHeight="200.0" fitWidth="200.0" StackPane.alignment="CENTER" />
+                  <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1080.0" StackPane.alignment="CENTER" />
                </children>
             </StackPane>
          </center>

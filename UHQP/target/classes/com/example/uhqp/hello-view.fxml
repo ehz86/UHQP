@@ -17,20 +17,20 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="1280" maxWidth="2048" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
    <children>
-      <BorderPane prefHeight="600.0" prefWidth="800.0">
+      <BorderPane prefHeight="1160.0" prefWidth="2048.0">
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
-                  <MediaView fitHeight="200.0" fitWidth="200.0" StackPane.alignment="CENTER" />
+                  <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1080.0" StackPane.alignment="CENTER" />
                </children>
             </StackPane>
          </center>
          <bottom>
             <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="728.0" style="-fx-background-color: #D0E1F9;" BorderPane.alignment="CENTER">
                <children>
-                  <Button contentDisplay="CENTER" mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+                  <Button fx:id="BackButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BackButtonPressed" prefHeight="40.0" prefWidth="40.0">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="25.0" />
                      </HBox.margin>
@@ -41,7 +41,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0">
+                  <Button fx:id="PlayButton" mnemonicParsing="false" onAction="#PlayButtonPressed" prefHeight="50.0" prefWidth="50.0">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="20.0" />
                      </HBox.margin>
@@ -52,7 +52,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="40.0">
+                  <Button fx:id="ForwardButton" mnemonicParsing="false" onAction="#ForwardButtonPressed" prefHeight="40.0" prefWidth="40.0">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="25.0" />
                      </HBox.margin>
@@ -80,7 +80,7 @@
                               <Image url="@images/volumeup.png" />
                            </image>
                         </ImageView>
-                        <Slider prefHeight="14.0" prefWidth="111.0">
+                        <Slider fx:id="Slider" prefHeight="14.0" prefWidth="111.0">
                            <HBox.margin>
                               <Insets top="35.0" />
                            </HBox.margin>
@@ -93,7 +93,7 @@
          <left>
             <VBox alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="217.0" style="-fx-background-color: #283655;" BorderPane.alignment="CENTER">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="48.0" prefWidth="222.0" text="HOME">
+                  <Button fx:id="HomeButton" mnemonicParsing="false" onAction="#HomeButtonPress" prefHeight="48.0" prefWidth="222.0" text="HOME">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -107,7 +107,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button layoutX="65.0" layoutY="236.0" mnemonicParsing="false" prefHeight="48.0" prefWidth="218.0" style="-fx-background-size: 54px;" text="PLAYLISTS">
+                  <Button fx:id="PlaylistButton" layoutX="65.0" layoutY="236.0" mnemonicParsing="false" onAction="#PressPlaylistButton" prefHeight="48.0" prefWidth="218.0" style="-fx-background-size: 54px;" text="PLAYLISTS">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
