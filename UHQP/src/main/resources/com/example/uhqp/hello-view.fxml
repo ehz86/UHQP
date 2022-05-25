@@ -17,7 +17,7 @@
 
 <AnchorPane maxHeight="2160" maxWidth="3840" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
    <children>
-      <BorderPane prefHeight="1160.0" prefWidth="1280.0">
+      <BorderPane prefHeight="600.0" prefWidth="800.0">
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
@@ -26,9 +26,9 @@
             </StackPane>
          </center>
          <bottom>
-            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="728.0" style="-fx-background-color: #D0E1F9;" BorderPane.alignment="CENTER">
+            <HBox alignment="TOP_CENTER" prefHeight="100.0" prefWidth="728.0" style="-fx-background-color: #D0E1F9; -fx-border-color: #283655;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="BackButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BackButtonPressed" prefHeight="40.0" prefWidth="40.0">
+                  <Button fx:id="BackButton" contentDisplay="CENTER" mnemonicParsing="false" onAction="#BackButtonPressed" prefHeight="40.0" prefWidth="40.0" style="-fx-border-style: solid; -fx-border-color: #283655; -fx-border-width: 3; -fx-border-radius: 30; -fx-background-color: #D0E1F9;">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="25.0" />
                      </HBox.margin>
@@ -39,18 +39,18 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="PlayButton" mnemonicParsing="false" onAction="#PlayButtonPressed" prefHeight="50.0" prefWidth="50.0">
+                  <Button id="PlayButton" fx:id="playButton" mnemonicParsing="false" onAction="#PlayButtonPressed" prefHeight="50.0" prefWidth="50.0" style="-fx-border-style: solid; -fx-border-color: #283655; -fx-border-width: 3; -fx-border-radius: 30; -fx-background-color: #D0E1F9;">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="20.0" />
                      </HBox.margin>
                      <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView id="playImg" fx:id="playImg" fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@images/play.png" />
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Button fx:id="ForwardButton" mnemonicParsing="false" onAction="#ForwardButtonPressed" prefHeight="40.0" prefWidth="40.0">
+                  <Button fx:id="ForwardButton" mnemonicParsing="false" onAction="#ForwardButtonPressed" prefHeight="40.0" prefWidth="40.0" style="-fx-border-style: solid; -fx-border-color: #283655; -fx-border-width: 3; -fx-border-radius: 30; -fx-background-color: #D0E1F9;">
                      <HBox.margin>
                         <Insets left="2.0" right="2.0" top="25.0" />
                      </HBox.margin>
@@ -61,7 +61,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Slider fx:id="progressBar" prefHeight="14.0" prefWidth="479.0">
+                  <Slider fx:id="progressBar" prefHeight="14.0" prefWidth="479.0" style="-fx-background-color: #4D648D; -fx-background-radius: 5;">
                      <HBox.margin>
                         <Insets top="35.0" />
                      </HBox.margin></Slider>
@@ -75,7 +75,7 @@
                               <Image url="@images/volumeup.png" />
                            </image>
                         </ImageView>
-                        <Slider fx:id="Slider" prefHeight="14.0" prefWidth="111.0">
+                        <Slider fx:id="Slider" prefHeight="14.0" prefWidth="111.0" style="-fx-background-color: #4D648D; -fx-border-radius: 5; -fx-background-radius: 5;">
                            <HBox.margin>
                               <Insets top="35.0" />
                            </HBox.margin>
@@ -86,9 +86,9 @@
             </HBox>
          </bottom>
          <left>
-            <VBox alignment="CENTER_LEFT" prefHeight="500.0" prefWidth="217.0" style="-fx-background-color: #283655;" BorderPane.alignment="CENTER">
+            <VBox alignment="CENTER_LEFT" prefHeight="720.0" prefWidth="125.0" style="-fx-background-color: #283655; -fx-border-color: #283655; -fx-border-width: 2;" BorderPane.alignment="CENTER">
                <children>
-                  <Button fx:id="HomeButton" mnemonicParsing="false" onAction="#HomeButtonPress" prefHeight="48.0" prefWidth="222.0" text="HOME">
+                  <Button fx:id="HomeButton" mnemonicParsing="false" onAction="#HomeButtonPress" prefHeight="48.0" prefWidth="222.0" style="-fx-background-color: #283655; -fx-border-color: #283655;" text="HOME" textFill="#d0e1f9">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -101,8 +101,9 @@
                               <Image url="@images/home.png" />
                            </image>
                         </ImageView>
-                     </graphic></Button>
-                  <Button fx:id="PlaylistButton" layoutX="65.0" layoutY="236.0" mnemonicParsing="false" onAction="#PressPlaylistButton" prefHeight="48.0" prefWidth="218.0" style="-fx-background-size: 54px;" text="PLAYLISTS">
+                     </graphic>
+                  </Button>
+                  <Button fx:id="PlaylistButton" layoutX="65.0" layoutY="236.0" mnemonicParsing="false" onAction="#PressPlaylistButton" prefHeight="48.0" prefWidth="218.0" style="-fx-background-size: 54px; -fx-background-color: #283655;" text="PLAYLISTS" textFill="#d0e1f9">
                      <VBox.margin>
                         <Insets bottom="20.0" />
                      </VBox.margin>
@@ -120,25 +121,27 @@
                </children>
             </VBox>
          </left>
+         <top>
+            <MenuBar prefHeight="28.0" prefWidth="1213.0" style="-fx-background-color: #D0E1F9;" BorderPane.alignment="CENTER">
+              <menus>
+                <Menu mnemonicParsing="false" text="File">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Delete" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+         </top>
       </BorderPane>
-      <MenuBar layoutX="-6.0" layoutY="-1.0" prefHeight="28.0" prefWidth="222.0" style="-fx-background-color: 4D4096;">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
    </children>
 </AnchorPane>
