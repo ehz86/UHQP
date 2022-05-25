@@ -16,7 +16,7 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
         int screenWidth = (int) Screen.getPrimary().getBounds().getWidth();
         int screenHeight = (int) Screen.getPrimary().getBounds().getHeight();
-        Scene scene = new Scene(fxmlLoader.load(),screenWidth,screenHeight);
+        Scene scene = new Scene(fxmlLoader.load(),800,600);
 
         stage.setTitle("Ultimate High Quality Player!");
         stage.setScene(scene);

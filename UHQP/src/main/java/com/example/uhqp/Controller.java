@@ -37,6 +37,10 @@ public class Controller {
     @FXML MediaView mediaView;
     @FXML private Slider progressBar;
     @FXML
+    private Button playButton;
+    private ImageView ivPlay;
+    private ImageView ivPause;
+    @FXML
     void HomeButtonPress(ActionEvent event) throws MalformedURLException {
 
         FileChooser fileChooser = new FileChooser();
@@ -103,7 +107,34 @@ public class Controller {
     }
 
     @FXML
+
     void PlayButtonPressed(ActionEvent event) {
+        /*Image imagePlay = new Image(new File("@images/play.png").toString());
+        ivPlay = new ImageView(imagePlay);
+        Image imagePause = new Image(new File("@images/pause.png").toString());
+        ivPause = new ImageView(imagePlay);
+        */
+
+
+
+        MediaPlayer.Status status = mediaPlayer.getStatus();
+
+
+        if(status == MediaPlayer.Status.PLAYING) {
+            mediaPlayer.pause();
+            //playButton.setGraphic(ivPlay);
+        }
+
+
+
+
+        else if(status == MediaPlayer.Status.PAUSED || status == MediaPlayer.Status.STOPPED){
+            mediaPlayer.play();
+           //playButton.setGraphic(ivPause);//апдейт имэдж вью и релоуднуть сцену
+        }
+
+
+
 
     }
 
