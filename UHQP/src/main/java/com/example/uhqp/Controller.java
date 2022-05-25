@@ -36,6 +36,7 @@ public class Controller {
     private MediaPlayer mediaPlayer;
     @FXML MediaView mediaView;
     @FXML private Slider progressBar;
+    @FXML
     private Button playButton;
     private ImageView ivPlay;
     private ImageView ivPause;
@@ -129,7 +130,7 @@ public class Controller {
 
         else if(status == MediaPlayer.Status.PAUSED || status == MediaPlayer.Status.STOPPED){
             mediaPlayer.play();
-           //playButton.setGraphic(ivPause);
+           //playButton.setGraphic(ivPause);//апдейт имэдж вью и релоуднуть сцену
         }
 
 
