@@ -36,10 +36,12 @@ public class Controller {
     private MediaPlayer mediaPlayer;
     @FXML MediaView mediaView;
     @FXML private Slider progressBar;
+
     @FXML
-    private Button playButton;
-    private ImageView ivPlay;
-    private ImageView ivPause;
+    private ImageView playImg;
+    private final Image imagePlay = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/play.png").toURI().toString());
+    private final Image imagePause = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/pause.png").toURI().toString());
+
     @FXML
     void HomeButtonPress(ActionEvent event) throws MalformedURLException {
 
@@ -109,33 +111,16 @@ public class Controller {
     @FXML
 
     void PlayButtonPressed(ActionEvent event) {
-        /*Image imagePlay = new Image(new File("@images/play.png").toString());
-        ivPlay = new ImageView(imagePlay);
-        Image imagePause = new Image(new File("@images/pause.png").toString());
-        ivPause = new ImageView(imagePlay);
-        */
-
-
-
         MediaPlayer.Status status = mediaPlayer.getStatus();
-
 
         if(status == MediaPlayer.Status.PLAYING) {
             mediaPlayer.pause();
-            //playButton.setGraphic(ivPlay);
+            playImg.setImage(imagePlay);
         }
-
-
-
-
-        else if(status == MediaPlayer.Status.PAUSED || status == MediaPlayer.Status.STOPPED){
+        else {
             mediaPlayer.play();
-           //playButton.setGraphic(ivPause);//апдейт имэдж вью и релоуднуть сцену
+            playImg.setImage(imagePause);//апдейт имэдж вью и релоуднуть сцену
         }
-
-
-
-
     }
 
     @FXML
