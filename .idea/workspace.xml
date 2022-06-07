@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f5f335a4-4731-44e6-82d4-4eb8c92877d0" name="Changes" comment="Add file choose function">
+    <list default="true" id="f5f335a4-4731-44e6-82d4-4eb8c92877d0" name="Changes" comment="added borders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/HelloApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,9 +137,9 @@
       <list>
         <item itemvalue="Application.com.example.uhqp.HelloApplication" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.com.example.demotexteditorbi2.HelloApplication" />
         <item itemvalue="Application.HelloApplication" />
-        <item itemvalue="Application.com.example.uhqp.HelloApplication" />
+        <item itemvalue="Application.com.example.demotexteditorbi2.HelloApplication" />
+        <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
   </component>
