@@ -1,5 +1,7 @@
 package com.example.uhqp;
 
+import javafx.beans.InvalidationListener;
+import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
 import javafx.beans.property.DoubleProperty;
 import javafx.beans.value.ChangeListener;
@@ -34,13 +36,16 @@ public class Controller {
 
     private String path;
     private MediaPlayer mediaPlayer;
-    @FXML MediaView mediaView;
-    @FXML private Slider progressBar;
-
     @FXML
-    private ImageView playImg;
-    private final Image imagePlay = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/play.png").toURI().toString());
-    private final Image imagePause = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/pause.png").toURI().toString());
+    MediaView mediaView;
+    @FXML
+    private Slider progressBar;
+    @FXML
+    private Slider volumeBar;
+    @FXML
+    private Button playButton;
+    private ImageView ivPlay;
+    private ImageView ivPause;
 
     @FXML
     void HomeButtonPress(ActionEvent event) throws MalformedURLException {
@@ -48,9 +53,9 @@ public class Controller {
         FileChooser fileChooser = new FileChooser();
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Audio and Video Files", "*.mp4", "*.mp3"));
-        File file =  fileChooser.showOpenDialog(null);
+        File file = fileChooser.showOpenDialog(null);
         path = file.toURI().toString();
-        if(path!=null) {
+        if (path != null) {
             Media media = new Media(path);
             mediaPlayer = new MediaPlayer(media);
             mediaView.setMediaPlayer(mediaPlayer);
@@ -94,7 +99,17 @@ public class Controller {
             else{
                 mediaPlayer.play();
             }*/
+            volumeBar.setValue(mediaPlayer.getVolume() * 100);
+            volumeBar.valueProperty().addListener(new InvalidationListener() {
+                @Override
+                public void invalidated(Observable observable) {
+                    mediaPlayer.setVolume(volumeBar.getValue() / 100);
+                }
+            });
+
             mediaPlayer.play();
+
+
         }
     }
 
@@ -109,24 +124,31 @@ public class Controller {
     }
 
     @FXML
-
     void PlayButtonPressed(ActionEvent event) {
+        /*Image imagePlay = new Image(new File("@images/play.png").toString());
+        ivPlay = new ImageView(imagePlay);
+        Image imagePause = new Image(new File("@images/pause.png").toString());
+        ivPause = new ImageView(imagePlay);
+        */
+
+
         MediaPlayer.Status status = mediaPlayer.getStatus();
 
-        if(status == MediaPlayer.Status.PLAYING) {
+
+        if (status == MediaPlayer.Status.PLAYING) {
             mediaPlayer.pause();
-            playImg.setImage(imagePlay);
-        }
-        else {
+            //playButton.setGraphic(ivPlay);
+        } else if (status == MediaPlayer.Status.PAUSED || status == MediaPlayer.Status.STOPPED) {
             mediaPlayer.play();
-            playImg.setImage(imagePause);//апдейт имэдж вью и релоуднуть сцену
+            //playButton.setGraphic(ivPause);//апдейт имэдж вью и релоуднуть сцену
         }
+
+
     }
 
     @FXML
     void PressPlaylistButton(ActionEvent event) {
     }
-
 
 }
 
