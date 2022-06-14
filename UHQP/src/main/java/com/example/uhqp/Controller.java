@@ -164,7 +164,7 @@ public class Controller {
                 }
             });
 
-         
+
 
             volumeBar.setValue(mediaPlayer.getVolume() * 10);
             volumeBar.valueProperty().addListener(new InvalidationListener() {
