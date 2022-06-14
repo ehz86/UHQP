@@ -1,5 +1,7 @@
 package com.example.uhqp;
+
 import java.util.Collections;
+
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
@@ -31,7 +33,7 @@ public class Controller {
     private String path;
 
     private List<File> songs;
-    private File cs,cs2;
+    private File cs, cs2;
     private int index;
     private MediaPlayer mediaPlayer;
     @FXML
@@ -48,13 +50,12 @@ public class Controller {
     private ListView<File> ListView;
     private TextArea txt;
     @FXML
+    private final Image gifdance = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/").toURI().toString());
     private ImageView playImg;
     private final Image imagePlay = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/play.png").toURI().toString());
     private final Image imagePause = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/pause.png").toURI().toString());
     private Object Stage;
     private Media media;
-
-
 
 
     @FXML
@@ -65,124 +66,99 @@ public class Controller {
     }
 
 
-
     @FXML
     void BackButtonPressed(ActionEvent event) {
+        if (index > 0) {
+            index--;
+            mediaPlayer.stop();
+            cs = ListView.getItems().get(index);
+            playSong(cs);
+
+
+
+        } else {
+            index = songs.size()-1;
+            mediaPlayer.stop();
+            cs = ListView.getItems().get(index);
+            playSong(cs);
+        }
 
     }
 
     @FXML
     void ForwardButtonPressed(ActionEvent event) {
-        if(index<=songs.size()-1){
-            MediaPlayer.Status status = mediaPlayer.getStatus() ;
+        if (index < songs.size() - 1) {
             index++;
-            mediaPlayer.pause();
+            mediaPlayer.stop();
             cs = ListView.getItems().get(index);
-            mediaPlayer.play();
-            if(cs2 != cs) {
-                mediaPlayer.pause();
-                status = MediaPlayer.Status.READY;
-            }
-            if (status == MediaPlayer.Status.READY) {
-                path = cs.toURI().toString();
-                if (path != null) {
-                    media = new Media(path);
-                    mediaPlayer = new MediaPlayer(media);
-                    DoubleProperty width = mediaView.fitWidthProperty();
-                    DoubleProperty height = mediaView.fitWidthProperty();
+            playSong(cs);
 
-                    width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
-                    height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
-                    mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
-                        @Override
-                        public void changed(ObservableValue<? extends Duration> observableValue, Duration oldValue, Duration newValue) {
-                            progressBar.setValue(newValue.toSeconds());
-                        }
-                    });
-                    progressBar.setOnMousePressed(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent mouseEvent) {
-                            mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
-                        }
-                    });
-                    progressBar.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent mouseEvent) {
-                            mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
-                        }
-                    });
 
-                    volumeBar.setValue(mediaPlayer.getVolume() * 10);
-                    volumeBar.valueProperty().addListener(new InvalidationListener() {
-                        @Override
-                        public void invalidated(Observable observable) {
-                            mediaPlayer.setVolume(volumeBar.getValue() / 100);
-                        }
-                    });
-                    mediaPlayer.play();
-                }
-            }
 
-        }
-        else{
+        } else {
             index = 0;
+            mediaPlayer.stop();
             cs = ListView.getItems().get(index);
+            playSong(cs);
         }
     }
 
-     @FXML
+    private void playSong(File cs) {
 
+
+        path = cs.toURI().toString();
+        if (path != null) {
+            media = new Media(path);
+            mediaPlayer = new MediaPlayer(media);
+            DoubleProperty width = mediaView.fitWidthProperty();
+            DoubleProperty height = mediaView.fitWidthProperty();
+
+            width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
+            height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
+            mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
+                @Override
+                public void changed(ObservableValue<? extends Duration> observableValue, Duration oldValue, Duration newValue) {
+                    progressBar.setValue(newValue.toSeconds());
+                }
+            });
+            progressBar.setOnMousePressed(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
+                }
+            });
+            progressBar.setOnMouseDragged(new EventHandler<MouseEvent>() {
+                @Override
+                public void handle(MouseEvent mouseEvent) {
+                    mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
+                }
+            });
+
+            volumeBar.setValue(mediaPlayer.getVolume() * 10);
+            volumeBar.valueProperty().addListener(new InvalidationListener() {
+                @Override
+                public void invalidated(Observable observable) {
+                    mediaPlayer.setVolume(volumeBar.getValue() / 100);
+                }
+            });
+            mediaPlayer.play();
+        }
+    }
+
+    @FXML
     void PlayButtonPressed(ActionEvent event) {
-        System.out.println(event);
-        MediaPlayer.Status status = mediaPlayer.getStatus() ;
+        MediaPlayer.Status status = mediaPlayer.getStatus();
         index = ListView.getSelectionModel().getSelectedIndex();
         cs = ListView.getItems().get(index);
-        if(cs2 != cs) {
-            mediaPlayer.pause();
-            status = MediaPlayer.Status.READY;
-        }
-            if (status == MediaPlayer.Status.READY) {
-                path = cs.toURI().toString();
-                if (path != null) {
-                    media = new Media(path);
-                    mediaPlayer = new MediaPlayer(media);
-                    DoubleProperty width = mediaView.fitWidthProperty();
-                    DoubleProperty height = mediaView.fitWidthProperty();
+         if(cs2 != cs) {
+             mediaPlayer.stop();
+             status = MediaPlayer.Status.READY;
+         }
+         if (status == MediaPlayer.Status.READY) {
+             playSong(cs);
+         }
 
-                    width.bind(Bindings.selectDouble(mediaView.sceneProperty(), "width"));
-                    height.bind(Bindings.selectDouble(mediaView.sceneProperty(), "height"));
-                    mediaPlayer.currentTimeProperty().addListener(new ChangeListener<Duration>() {
-                        @Override
-                        public void changed(ObservableValue<? extends Duration> observableValue, Duration oldValue, Duration newValue) {
-                            progressBar.setValue(newValue.toSeconds());
-                        }
-                    });
-                    progressBar.setOnMousePressed(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent mouseEvent) {
-                            mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
-                        }
-                    });
-                    progressBar.setOnMouseDragged(new EventHandler<MouseEvent>() {
-                        @Override
-                        public void handle(MouseEvent mouseEvent) {
-                            mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
-                        }
-                    });
-
-                    volumeBar.setValue(mediaPlayer.getVolume() * 10);
-                    volumeBar.valueProperty().addListener(new InvalidationListener() {
-                        @Override
-                        public void invalidated(Observable observable) {
-                            mediaPlayer.setVolume(volumeBar.getValue() / 100);
-                        }
-                    });
-                    mediaPlayer.play();
-                }
-            }
-
-
-            else if (status == MediaPlayer.Status.PLAYING) {
+             else if (status == MediaPlayer.Status.PLAYING) {
                 mediaPlayer.pause();
                 playImg.setImage(imagePause);
             }
@@ -193,6 +169,9 @@ public class Controller {
 
          cs2 = cs;
     }
+
+
+
 
 
     @FXML

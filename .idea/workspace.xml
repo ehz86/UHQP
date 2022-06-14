@@ -6,7 +6,21 @@
   <component name="ChangeListManager">
     <list default="true" id="f5f335a4-4731-44e6-82d4-4eb8c92877d0" name="Changes" comment="Add forward button(not working correctly)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/images/Girls.gif" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" afterDir="false" />
     </list>
+    <list id="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" name="Changes by romac" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -214,7 +228,14 @@
       <option name="project" value="LOCAL" />
       <updated>1655227913719</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Add forward button(not working correctly)">
+      <created>1655229531159</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1655229531159</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,7 +249,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="Function" />
+                        <option value="origin/main" />
                       </list>
                     </value>
                   </entry>
