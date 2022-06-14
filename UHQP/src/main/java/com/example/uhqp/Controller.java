@@ -29,6 +29,7 @@ import java.util.List;
 public class Controller {
 
     private String path;
+
     private List<File> songs;
     private File cs,cs2;
     private int index;
