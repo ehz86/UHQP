@@ -49,11 +49,14 @@ public class Controller {
     @FXML
     private ListView<File> ListView;
     private TextArea txt;
+
     @FXML
-    private final Image gifdance = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/").toURI().toString());
     private ImageView playImg;
     private final Image imagePlay = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/play.png").toURI().toString());
     private final Image imagePause = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/pause.png").toURI().toString());
+    @FXML
+    private ImageView gif2004;
+    private final Image gifdance = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/Girls.gif").toURI().toString());
     private Object Stage;
     private Media media;
 
@@ -142,6 +145,7 @@ public class Controller {
                 }
             });
             mediaPlayer.play();
+            gif2004.setImage(gifdance);
         }
     }
 

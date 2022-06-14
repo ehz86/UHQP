@@ -16,14 +16,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 
-<AnchorPane maxHeight="600" maxWidth="800" minHeight="-Infinity" minWidth="-Infinity" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
+<AnchorPane maxHeight="600" maxWidth="800" style="-fx-background-color: #98FB98;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.uhqp.Controller">
    <children>
       <BorderPane prefHeight="600.0" prefWidth="800.0">
          <center>
             <StackPane prefHeight="150.0" prefWidth="200.0" style="-fx-background-color: #4D648D;" BorderPane.alignment="CENTER">
                <children>
                   <MediaView fx:id="mediaView" fitHeight="720.0" fitWidth="1080.0" StackPane.alignment="CENTER" />
-                  <ImageView fx:id="gif2004" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+                  <ImageView fx:id="gif2004" fitHeight="400.0" fitWidth="600.0" pickOnBounds="true" preserveRatio="true" />
                </children>
             </StackPane>
          </center>
@@ -63,7 +63,7 @@
                            </image>
                         </ImageView>
                      </graphic></Button>
-                  <Slider fx:id="progressBar" prefHeight="14.0" prefWidth="479.0" style="-fx-background-color: #4D648D; -fx-background-radius: 5;">
+                  <Slider fx:id="progressBar" prefHeight="14.0" prefWidth="1008.0" style="-fx-background-color: #4D648D; -fx-background-radius: 5;">
                      <HBox.margin>
                         <Insets top="35.0" />
                      </HBox.margin></Slider>
