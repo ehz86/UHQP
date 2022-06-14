@@ -7,12 +7,10 @@
     <list default="true" id="f5f335a4-4731-44e6-82d4-4eb8c92877d0" name="Changes" comment="added borders">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/resources/com/example/uhqp/hello-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/hello-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -207,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1653452856721</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added borders">
+      <created>1655225846006</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1655225846006</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -221,7 +226,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="function2" />
+                        <option value="Function" />
                       </list>
                     </value>
                   </entry>
@@ -239,6 +244,7 @@
     <MESSAGE value="Сделал открытие медиафайла при нажатии на кнопку home" />
     <MESSAGE value="Add file choose function" />
     <MESSAGE value="Add Pause/play (!icon doesnt work properly)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Pause/play (!icon doesnt work properly)" />
+    <MESSAGE value="added borders" />
+    <option name="LAST_COMMIT_MESSAGE" value="added borders" />
   </component>
 </project>
