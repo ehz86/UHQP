@@ -60,8 +60,9 @@ public class Controller {
     private String path;
 
     private List<File> songs;
+    private List<File> newsongs;
     private File cs, cs2;
-    private int index;
+    private int index =-1;
     private MediaPlayer mediaPlayer;
     @FXML
     MediaView mediaView;
@@ -69,15 +70,16 @@ public class Controller {
     private Slider progressBar;
     @FXML
     private Slider volumeBar;
-    @FXML
-    private TextField songname;
+
     @FXML
     private Button playButton;
     private ImageView ivPlay;
     private ImageView ivPause;
     @FXML
     private ListView<File> ListView;
-    private TextArea txt;
+    @FXML
+    private TextField txt;
+    private Boolean flag = false;
 
     @FXML
     private ImageView playImg;
@@ -94,13 +96,24 @@ public class Controller {
     @FXML
     void HomeButtonPress(ActionEvent event) {
         FileChooser fileChooser = new FileChooser();
-        songs = fileChooser.showOpenMultipleDialog(null);
+        /*fileChooser.getExtensionFilters().addAll(//
+                new FileChooser.ExtensionFilter("MP3",".mp3"),//
+                new FileChooser.ExtensionFilter("MP4",".mp4"),//
+                new FileChooser.ExtensionFilter("AVI",".avi"),//
+                new FileChooser.ExtensionFilter("MOV",".mov"),//
+                new FileChooser.ExtensionFilter("WAV",".wav"));*/
+        newsongs = fileChooser.showOpenMultipleDialog(null);
+        songs = new ArrayList<>(newsongs);
         ListView.getItems().addAll(songs);
         media = new Media(songs.get(0).toURI().toString());
         mediaPlayer = new MediaPlayer(media);
 
     }
-
+    @FXML
+    void TrashButtonPress(ActionEvent event){
+        index = ListView.getSelectionModel().getSelectedIndex();
+        ListView.getItems().remove(index);
+    }
 
     @FXML
     void BackButtonPressed(ActionEvent event) {
@@ -129,22 +142,30 @@ public class Controller {
             cs = ListView.getItems().get(index);
             playSong(cs);
 
-
-
-        } else {
-            index = 0;
-            mediaPlayer.stop();
-            cs = ListView.getItems().get(index);
+            } else {
+                index = 0;
+                mediaPlayer.stop();
+                cs = ListView.getItems().get(index);
+                playSong(cs);
+            }
+       // }
+        /*else{
+            Random r = new Random();
+            int i = r.nextInt(songs.size());
+            mediaPlayer.stop();;
+            cs=ListView.getItems().get(i);
             playSong(cs);
         }
+
+         */
     }
 
     private void playSong(File cs) {
 
 
         path = cs.toURI().toString();
-        String name = path;
-
+        String name = cs.getName();
+        txt.setText(name);
 
         if (path != null) {
             media = new Media(path);
@@ -160,6 +181,30 @@ public class Controller {
                     progressBar.setValue(newValue.toSeconds());
                 }
             });
+            mediaPlayer.totalDurationProperty().addListener(new ChangeListener<Duration>() {
+                @Override
+                public void changed(ObservableValue<? extends Duration> observableValue, Duration oldduration, Duration newduration) {
+                    progressBar.setMax(newduration.toSeconds());
+                }
+            });
+            progressBar.valueChangingProperty().addListener(new ChangeListener<Boolean>() {
+                @Override
+                public void changed(ObservableValue<? extends Boolean> observableValue, Boolean aBoolean, Boolean t1) {
+                    if(!progressBar.isValueChanging()){
+                        mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
+                    }
+                }
+            });
+            progressBar.valueProperty().addListener(new ChangeListener<Number>() {
+                @Override
+                public void changed(ObservableValue<? extends Number> observableValue, Number oldn, Number newn) {
+                    double currenttime = mediaPlayer.getCurrentTime().toSeconds();
+                    if(Math.abs(currenttime - newn.doubleValue()) > 0.5){
+                        mediaPlayer.seek(Duration.seconds(newn.doubleValue()));
+                    }
+                }
+            });
+
             progressBar.setOnMousePressed(new EventHandler<MouseEvent>() {
                 @Override
                 public void handle(MouseEvent mouseEvent) {
@@ -172,6 +217,7 @@ public class Controller {
                     mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
                 }
             });
+
             mediaPlayer.setOnEndOfMedia(new Runnable() {
                 @Override
                 public void run() {
@@ -180,11 +226,11 @@ public class Controller {
             });
 
 
-            volumeBar.setValue(mediaPlayer.getVolume() * 10);
+            volumeBar.setValue(mediaPlayer.getVolume() * 100);
             volumeBar.valueProperty().addListener(new InvalidationListener() {
                 @Override
                 public void invalidated(Observable observable) {
-                    mediaPlayer.setVolume(volumeBar.getValue() / 100);
+                    mediaPlayer.setVolume(volumeBar.getValue() / 10);
                 }
             });
             mediaPlayer.play();
@@ -197,25 +243,28 @@ public class Controller {
     void PlayButtonPressed(ActionEvent event) {
         MediaPlayer.Status status = mediaPlayer.getStatus();
         index = ListView.getSelectionModel().getSelectedIndex();
-        cs = ListView.getItems().get(index);
-         if(cs2 != cs) {
-             mediaPlayer.stop();
-             status = MediaPlayer.Status.READY;
-         }
-         if (status == MediaPlayer.Status.READY) {
-             playSong(cs);
-         }
+        System.out.println(index);
+        if(index == -1){
+            cs = ListView.getItems().get(0);
+        }else {
+            cs = ListView.getItems().get(index);}
 
-             else if (status == MediaPlayer.Status.PLAYING) {
+            if (cs2 != cs) {
+                mediaPlayer.stop();
+                status = MediaPlayer.Status.READY;
+            }
+            if (status == MediaPlayer.Status.READY) {
+                playSong(cs);
+            } else if (status == MediaPlayer.Status.PLAYING) {
                 mediaPlayer.pause();
                 playImg.setImage(imagePause);
-            }
-            else if (status == MediaPlayer.Status.PAUSED) {
+            } else if (status == MediaPlayer.Status.PAUSED) {
                 mediaPlayer.play();
                 playImg.setImage(imagePlay);//апдейт имэдж вью и релоуднуть сцену
             }
 
-         cs2 = cs;
+            cs2 = cs;
+
     }
 
 
@@ -224,6 +273,17 @@ public class Controller {
 
     @FXML
     void PressPlaylistButton(ActionEvent event) {
+       /* if(flag == false){
+            flag = true;
+
+            System.out.println(flag);
+        }
+        else{
+            flag = false;
+            ListView.getItems().remove(0,songs.size());
+            ListView.getItems().addAll(songs);
+            System.out.println(flag);
+        }*/
 
     }
 }
