@@ -26,8 +26,8 @@ package com.example.uhqp;
    вместе с этой программой. Если это не так, см.
    <http://www.gnu.org/licenses/>.)
  */
-import java.util.Collections;
 
+import com.almasb.fxgl.core.collection.Array;
 import javafx.beans.InvalidationListener;
 import javafx.beans.Observable;
 import javafx.beans.binding.Bindings;
@@ -49,11 +49,11 @@ import javafx.util.Duration;
 
 
 import java.io.File;
-import java.net.MalformedURLException;
-import java.util.Collection;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
-import java.util.Timer;
+import java.util.Random;
 
 public class Controller {
 
@@ -69,6 +69,8 @@ public class Controller {
     private Slider progressBar;
     @FXML
     private Slider volumeBar;
+    @FXML
+    private TextField songname;
     @FXML
     private Button playButton;
     private ImageView ivPlay;
@@ -86,12 +88,16 @@ public class Controller {
     private final Image gifdance = new Image(new File("UHQP/src/main/resources/com/example/uhqp/images/Girls.gif").toURI().toString());
     private Object Stage;
     private Media media;
+    private ChangeListener progressbarlist;
 
 
     @FXML
     void HomeButtonPress(ActionEvent event) {
-        System.out.println(songs);
-        Collections.shuffle(songs);
+        FileChooser fileChooser = new FileChooser();
+        songs = fileChooser.showOpenMultipleDialog(null);
+        ListView.getItems().addAll(songs);
+        media = new Media(songs.get(0).toURI().toString());
+        mediaPlayer = new MediaPlayer(media);
 
     }
 
@@ -137,6 +143,9 @@ public class Controller {
 
 
         path = cs.toURI().toString();
+        String name = path;
+
+
         if (path != null) {
             media = new Media(path);
             mediaPlayer = new MediaPlayer(media);
@@ -163,7 +172,12 @@ public class Controller {
                     mediaPlayer.seek(Duration.seconds(progressBar.getValue()));
                 }
             });
-
+            mediaPlayer.setOnEndOfMedia(new Runnable() {
+                @Override
+                public void run() {
+                    nextSong();
+                }
+            });
 
 
             volumeBar.setValue(mediaPlayer.getVolume() * 10);
@@ -210,14 +224,8 @@ public class Controller {
 
     @FXML
     void PressPlaylistButton(ActionEvent event) {
-        FileChooser fileChooser = new FileChooser();
-        songs = fileChooser.showOpenMultipleDialog(null);
 
-        ListView.getItems().addAll(songs);
-        media = new Media(songs.get(0).toURI().toString());
-        mediaPlayer = new MediaPlayer(media);
     }
-
 }
 
 

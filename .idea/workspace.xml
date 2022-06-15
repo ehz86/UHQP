@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f5f335a4-4731-44e6-82d4-4eb8c92877d0" name="Changes" comment="Add forward button(not working correctly)">
+      <change afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Strings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$1.class" afterDir="false" />
@@ -12,9 +13,11 @@
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller$4.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/Controller.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/HelloApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/target/classes/com/example/uhqp/HelloApplication.class" afterDir="false" />
     </list>
     <list id="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" name="Changes by romac" comment="">
       <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/HelloApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,12 +42,21 @@
   <component name="LineStatusTrackerManager">
     <file path="$PROJECT_DIR$/UHQP/src/main/java/com/example/uhqp/Controller.java">
       <ranges>
-        <range start1="1" end1="2" start2="1" end2="28" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
-        <range start1="29" end1="29" start2="55" end2="56" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
-        <range start1="92" end1="106" start2="119" end2="120" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
-        <range start1="107" end1="107" start2="121" end2="136" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
-        <range start1="138" end1="138" start2="167" end2="169" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
-        <range start1="148" end1="148" start2="179" end2="182" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
+        <range start1="28" end1="29" start2="28" end2="28" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="30" end1="30" start2="29" end2="30" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="51" end1="53" start2="51" end2="51" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="54" end1="54" start2="52" end2="54" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="55" end1="56" start2="55" end2="56" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="71" end1="71" start2="71" end2="73" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="88" end1="88" start2="90" end2="91" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="92" end1="94" start2="95" end2="100" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="119" end1="119" start2="125" end2="129" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
+        <range start1="125" end1="127" start2="135" end2="135" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
+        <range start1="139" end1="139" start2="147" end2="150" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="165" end1="166" start2="176" end2="182" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="178" end1="178" start2="194" end2="195" changelist="9911a132-a1bb-4d57-a47b-a7fdfeb24d51" />
+        <range start1="212" end1="218" start2="229" end2="230" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
+        <range start1="219" end1="220" start2="231" end2="231" changelist="f5f335a4-4731-44e6-82d4-4eb8c92877d0" />
       </ranges>
     </file>
   </component>
@@ -74,8 +86,8 @@
 }</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
-      <recent name="com.example.demotexteditorbi2" />
       <recent name="com.example.uhqp" />
+      <recent name="com.example.demotexteditorbi2" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\4751712\Documents\GitHub\UHQP\UHQP\src\main\resources\com\example\uhqp\images" />
@@ -256,7 +268,21 @@
       <option name="project" value="LOCAL" />
       <updated>1655238655093</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Add forward button(not working correctly)">
+      <created>1655239869406</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239869406</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Add forward button(not working correctly)">
+      <created>1655239983581</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1655239983581</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
